@@ -3,8 +3,6 @@ import mongoose from "mongoose";
 
 import PostMessage from "../models/postMessage.js";
 
-// const router = express.Router()
-
 export const getPosts = async (req, res) => {
   const { page } = req.query;
   try {
@@ -94,5 +92,3 @@ export const likePost = async (req, res) => {
   const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });
   res.status(200).json(updatedPost);
 };
-
-// export default router
